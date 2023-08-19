@@ -6,8 +6,39 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list format;
+	va_list list;
+	char *str;
+	int i = 0;
 
 	if (!format)
 		return (-1);
+	va_start(list, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			switch (format[i])
+			{
+				case 'c':
+					print_char(varg(list, int));
+					break;
+				case 's':
+					str = va_arg(list, char *);
+					if (str)
+						print_string(str);
+					break;
+				case '%':
+					print_char('%');
+					break;
+			}
+			i++;
+		}
+		if (format[i])
+		{
+			print_char(format[i]);
+			i++;
+		}
+	}
+	va_end(list);
 }
