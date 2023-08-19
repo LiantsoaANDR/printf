@@ -6,5 +6,5 @@
  */
 void print_char(char c)
 {
-	/*need to use write function*/
+	write(1, &c, 1);
 }
