@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					print_char(varg(list, int));
+					print_char(va_arg(list, int));
 					break;
 				case 's':
 					str = va_arg(list, char *);
