@@ -4,7 +4,7 @@
  * @s: string to print
  * Return: void
  */
-void print_string(char *s)
+int print_string(char *s)
 {
 	int l = 0;
 
