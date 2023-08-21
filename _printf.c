@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 /**
  * _printf - a function that works like "printf" form the std library
  * @format: a string to write with specifier
@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	char *str;
 	int i = 0;
+	int length = 0;
 
 	if (!format)
 		return (-1);
@@ -21,24 +22,25 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					print_char(va_arg(list, int));
+					length += print_char(va_arg(list, int));
 					break;
 				case 's':
 					str = va_arg(list, char *);
 					if (str)
-						print_string(str);
+						length += print_string(str);
 					break;
 				case '%':
-					print_char('%');
+					length += print_char('%');
 					break;
 			}
 			i++;
 		}
 		if (format[i])
 		{
-			print_char(format[i]);
+			length += print_char(format[i]);
 			i++;
 		}
 	}
 	va_end(list);
+	return (length);
 }

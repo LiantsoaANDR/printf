@@ -11,4 +11,5 @@ int print_string(char *s)
 	while (s[l])
 		l++;
 	write(1, s, l);
+	return (l);
 }
