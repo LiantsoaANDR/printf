@@ -32,6 +32,9 @@ int _printf(const char *format, ...)
 				case '%':
 					length += print_char('%');
 					break;
+				default:
+					length += print_char('%');
+					length += print_char(format[i]);
 			}
 			i++;
 		}
