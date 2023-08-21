@@ -34,7 +34,8 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					length += print_char('%');
-					length += print_char(format[i]);
+					if (format[i])
+						length += print_char(format[i]);
 			}
 			i++;
 		}
