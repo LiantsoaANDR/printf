@@ -36,13 +36,12 @@ int _printf(const char *format, ...)
 					length += print_char('%');
 					length += print_char(format[i]);
 			}
-			i++;
 		}
-		if (format[i])
+		else
 		{
 			length += print_char(format[i]);
-			i++;
 		}
+		i++;
 	}
 	va_end(list);
 	return (length);
