@@ -2,7 +2,7 @@
 /**
  * print_string - prints string
  * @s: string to print
- * Return: void
+ * Return: the number of char written
  */
 int print_string(char *s)
 {
