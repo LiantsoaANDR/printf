@@ -33,8 +33,11 @@ int print_format(char format, va_list list)
 			nbr += print_binary(va_arg(list, unsigned int));
 			break;
 		default:
-			nbr += print_char('%');
-			nbr += print_char(format);
+			if (format)
+			{
+				nbr += print_char('%');
+				nbr += print_char(format);
+			}
 	}
 	return (nbr);
 }

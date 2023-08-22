@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (!format[i])
+				return (-1);
 			length += print_format(format[i], list);
 		}
 		else
