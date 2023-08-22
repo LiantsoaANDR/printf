@@ -5,7 +5,7 @@
  * @n: the the decimal number to print in binary
  * Return: the number of binary number printed as a char
  */
-int print_binary(unsigned int n)
+int print_binary(long n)
 {
 	char bin[] = "01";
 	char *buf;
@@ -14,7 +14,7 @@ int print_binary(unsigned int n)
 	if (!n)
 		return (print_char('0'));
 
-	buf = malloc(sizeof(unsigned int) * 8);
+	buf = malloc(sizeof(long) * 8);
 	if (!buf)
 		return (0);
 	/*Store n as a string and in binary and in reverse*/

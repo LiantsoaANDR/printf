@@ -9,6 +9,6 @@ int print_char(char c);
 int print_string(char *s);
 int print_format(char format, va_list list);
 int print_number(long n);
-int print_binary(unsigned int n);
+int print_binary(long n);
 
 #endif

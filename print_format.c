@@ -28,7 +28,7 @@ int print_format(char format, va_list list)
 			nbr += print_number((long)va_arg(list, int));
 			break;
 		case 'b':
-			nbr += print_binary(va_arg(list, unsigned int));
+			nbr += print_binary((long)va_arg(list, unsigned int));
 			break;
 		default:
 			nbr += print_char('%');
