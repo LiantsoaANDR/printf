@@ -14,7 +14,7 @@ int print_binary(unsigned int n)
 	if (!n)
 		return (print_char('0'));
 
-	buf = malloc(64);
+	buf = malloc(sizeof(unsigned int) * 8);
 	if (!buf)
 		return (0);
 	/*Store n as a string and in binary and in reverse*/
