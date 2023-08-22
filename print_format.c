@@ -25,7 +25,7 @@ int print_format(char format, va_list list)
 			break;
 		case 'd':
 		case 'i':
-			nbr += print_number((double)va_arg(list, int));
+			nbr += print_number((long)va_arg(list, int));
 			break;
 		default:
 			nbr += print_char('%');

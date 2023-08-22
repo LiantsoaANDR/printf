@@ -1,33 +1,37 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * print_number - prints number on the arg list
  * @n: the number to print
  * Return: the number of digit printed as a char
  */
-int print_number(double n)
+int print_number(long n)
 {
 	char numb[] = "0123456789";
-	double x;
-	int i, l = 0;
+	char *buf;
+	int i = 0, l = 0;
 
 	if (n < 0)
 	{
 		l += print_char('-');
 		n = -n;
 	}
-	x = n;
-	while (x > 10)
+
+	buf = malloc(sizeof(long) * n);
+	if (!buf)
+		return (0);
+	/*Store n as a  string in reverse*/
+	while (n > 0)
 	{
-		x /= 10;
+		buf[i] = numb[n % 10];
+		n /= 10;
+		i++;
 	}
-	i = (int)x;
-	l += print_char(numb[i]);
-	while (x < n)
-	{
-		x *= 10;
-		i = (int)x;
-		l += print_char(numb[i % 10]);
-	}
+	/*Print the string of number in reverse*/
+	for (i = i - 1; i >= 0; i--)
+		l += print_char(buf[i]);
+	free(buf);
+
 	return (l);
 
 }

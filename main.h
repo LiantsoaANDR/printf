@@ -8,6 +8,6 @@ int _printf(const char *format, ...);
 int print_char(char c);
 int print_string(char *s);
 int print_format(char format, va_list list);
-int print_number(double n);
+int print_number(long n);
 
 #endif
