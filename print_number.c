@@ -11,6 +11,8 @@ int print_number(long n)
 	char *buf;
 	int i = 0, l = 0;
 
+	if (!n)
+		l += print_char('0');
 	if (n < 0)
 	{
 		l += print_char('-');
