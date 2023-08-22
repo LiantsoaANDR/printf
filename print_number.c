@@ -17,7 +17,7 @@ int print_number(long n)
 		n = -n;
 	}
 
-	buf = malloc(sizeof(long) * n);
+	buf = malloc(sizeof(long));
 	if (!buf)
 		return (0);
 	/*Store n as a  string in reverse*/
