@@ -25,7 +25,7 @@ int print_number(double n)
 	while (x < n)
 	{
 		x *= 10;
-		l += print_char(numb[i]);
+		l += print_char(numb[i % 10]);
 	}
 	return (l);
 
