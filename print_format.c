@@ -19,6 +19,8 @@ int print_format(char format, va_list list)
 			str = va_arg(list, char *);
 			if (str)
 				nbr += print_string(str);
+			else
+				nbr += print_string("(null)");
 			break;
 		case '%':
 			nbr += print_char('%');
