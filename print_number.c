@@ -25,6 +25,7 @@ int print_number(double n)
 	while (x < n)
 	{
 		x *= 10;
+		i = (int)x;
 		l += print_char(numb[i % 10]);
 	}
 	return (l);
